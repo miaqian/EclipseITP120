@@ -33,7 +33,6 @@ public class Prime235 {
             System.out.println();
             System.out.println("The numbers with prime factors 2, 3, and 5 are");
             findSequence(lower, upper);
-
             if (lower >= 0 && upper >= 0 && lower < upper) {
                 break;
             } else {
@@ -51,8 +50,6 @@ public class Prime235 {
      *
      * @param lowerNum
      * @param upperNum
-     *
-     *
      */
     private static void findSequence(int lowerNum, int upperNum) {
         for (int i = lowerNum; i <= upperNum; i++) {
@@ -68,7 +65,6 @@ public class Prime235 {
      *
      * @param num
      * @return check num == 1 is true
-     *
      */
     private static boolean findPrimeFactors(int num) {
         while (num % 2 == 0) {
@@ -88,7 +84,6 @@ public class Prime235 {
      * requested format
      *
      * @param num
-     *
      */
     private static void displayResult(int num) {
         int exponent;
@@ -99,17 +94,13 @@ public class Prime235 {
 
         exponent = countDivisibitly(num, 3);
         if (exponent >= 0) {
-            if (exponent >= 0) {
-                System.out.print(" * ");
-            }
+            System.out.print(" * ");
             System.out.print("3^" + exponent);
         }
 
         exponent = countDivisibitly(num, 5);
         if (exponent >= 0) {
-            if (exponent >= 0) {
-                System.out.print(" * ");
-            }
+            System.out.print(" * ");
             System.out.print("5^" + exponent);
         }
         System.out.println();
@@ -121,7 +112,6 @@ public class Prime235 {
      * @param num
      * @param divisor
      * @return count
-     *
      */
     private static int countDivisibitly(int num, int divisor) {
         int count = 0;
