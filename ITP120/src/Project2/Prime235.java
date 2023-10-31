@@ -11,10 +11,11 @@ import java.util.Scanner;
  *
  *
  * @author huiziqian
- * @version Oct 25, 2023
+ * @version October 25, 2023
  *
  */
 public class Prime235 {
+    private static Scanner input = new Scanner(System.in);
 
     /**
      * main
@@ -22,7 +23,6 @@ public class Prime235 {
      * @param args ignore
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
         while (true) {
             System.out.print("Input lower limit: ");
@@ -55,7 +55,6 @@ public class Prime235 {
      *
      */
     private static void findSequence(int lowerNum, int upperNum) {
-
         for (int i = lowerNum; i <= upperNum; i++) {
             if (findPrimeFactors(i)) {
                 System.out.print(i + " = ");
@@ -72,7 +71,6 @@ public class Prime235 {
      *
      */
     private static boolean findPrimeFactors(int num) {
-
         while (num % 2 == 0) {
             num = num / 2;
         }
@@ -126,7 +124,6 @@ public class Prime235 {
      *
      */
     private static int countDivisibitly(int num, int divisor) {
-
         int count = 0;
         while (num % divisor == 0) {
             count++;
