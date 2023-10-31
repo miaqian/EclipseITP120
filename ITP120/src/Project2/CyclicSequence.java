@@ -15,17 +15,20 @@ import java.util.Scanner;
  *
  *
  * @author huiziqian
- * @version Oct 24, 2023
+ * @version October 24, 2023
  *
  */
 public class CyclicSequence {
+
+    private static Scanner input = new Scanner(System.in);
+
     /**
      * main
      *
-     * @param args
+     * @param args ignore
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        System.out.print("Enter start value: ");
         int inputNum = input.nextInt();
         generateSequence(inputNum);
         input.close();
@@ -35,13 +38,10 @@ public class CyclicSequence {
      *
      * This method takes a number as a parameter and outputs the other numbers in the sequence.
      *
-     * @param start
+     * @param start as user's input value
      */
     public static void generateSequence(int start) {
-        System.out.print("Enter start value: ");
         int current = start;
-        System.out.println(current);
-
         System.out.println("The cyclic sequence is as follows:");
         System.out.println(current);
         while (true) {
@@ -58,7 +58,7 @@ public class CyclicSequence {
      *
      * This method calculate the sum of all the number's proper divisors
      *
-     * @param number
+     * @param number next number of the sequence (after start)
      * @return sum
      */
     public static int sumProperDivisors(int number) {
