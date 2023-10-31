@@ -67,7 +67,7 @@ public class Prime235 {
      * This method check if a number's only prime factors are 2, 3, and 5
      *
      * @param num
-     * @return if num == 1 true
+     * @return check num == 1 is true
      *
      */
     private static boolean findPrimeFactors(int num) {
