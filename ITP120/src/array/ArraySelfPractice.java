@@ -1,7 +1,7 @@
 /**
  *
  */
-package Array;
+package array;
 
 /**
  * notes about Arrays and the ArrayList Class
