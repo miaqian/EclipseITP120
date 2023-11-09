@@ -20,7 +20,7 @@ public class BookShelf {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    private static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the length of the book shelf in feet: ");
         int rowLength = input.nextInt();
