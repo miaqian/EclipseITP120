@@ -5,11 +5,11 @@ import java.util.Scanner;
 /**
  * ChoHan game simulate
  *
- * Dealer class: We will create an instance of this class to represent the dealer. It will have the ability
- * to roll the dice, report the value of the dice, and report whether the total dice value is Cho or
- * Han.
- * Player class: We will create two instances of this class to represent the players. Instances of the
- * class can store the player’s name, make a guess between Cho and Han, and be awarded points.
+ * Dealer class: We will create an instance of this class to represent the dealer. It will have the
+ * ability to roll the dice, report the value of the dice, and report whether the total dice value
+ * is Cho or Han. Player class: We will create two instances of this class to represent the players.
+ * Instances of the class can store the player’s name, make a guess between Cho and Han, and be
+ * awarded points.
  *
  * @author huiziqian
  * @version Nov 8, 2023
