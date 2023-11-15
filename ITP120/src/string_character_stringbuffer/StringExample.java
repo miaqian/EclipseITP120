@@ -76,7 +76,7 @@ public class StringExample {
         String newWord = "";
         newWord += Character.toUpperCase(word.charAt(0));
 
-        //sub strings
+        // sub strings
 
         String slice = word.substring(1);
         System.out.println(slice);
@@ -85,30 +85,25 @@ public class StringExample {
 
 //you cannot use string class methods on a char type of value
 
-
 //using String arrays
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter a sentence");
         String sentence = input.nextLine();
+        System.out.println(sentence.length());
+        for (int idx = 0; idx < sentence.length(); idx++) {
+            char letter = sentence.charAt(idx);
+            System.out.println(letter);
+        }
 
-        //where are you going today
-        String[] wordList = sentence.split(" ");
+        // where are you going today
+        String[] wordList = sentence.split("\\.");
 
         System.out.println(Arrays.toString(wordList));
 
         System.out.println(wordList[0]);
 
         System.out.println(wordList.length);
-
-
-
-
-
-
-
-
-
 
     }
 }
