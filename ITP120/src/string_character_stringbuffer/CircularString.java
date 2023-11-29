@@ -22,7 +22,7 @@ public class CircularString {
         Scanner input = new Scanner(System.in);
         boolean continueInput = true;
         while (continueInput) {
-            // get an input string/sentence
+
             System.out.println("Input a sentence of words separated by a space: ");
             String inputSentence = input.nextLine();
 
@@ -60,21 +60,20 @@ public class CircularString {
      *
      */
     public static boolean isCircular(String[] array) {
-        // input is an string array , iterate over each element of the array
         if (array.length == 0) {
             return false;
         }
-        // iterate each digit in each element
+
         for (int idx = 0; idx < array.length; idx++) {
-            // find the index[0] equal to index[length-1]
-            char firstChar = array[idx].charAt(0);
+            char firstCharOfNextElement = array[(idx + 1) % array.length].charAt(0);
             char lastChar = array[idx].charAt(array[idx].length() - 1);
 
-            if (lastChar != array[(idx + 1) % array.length].charAt(0)) {
+            if (lastChar != firstCharOfNextElement) {
                 return false;
             }
         }
         return true;
     }
-
 }
+
+

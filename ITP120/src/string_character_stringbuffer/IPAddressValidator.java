@@ -18,15 +18,12 @@ public class IPAddressValidator {
      * @param args ignore
      */
     public static void main(String[] args) {
-        // accept a string from the user
         Scanner input = new Scanner(System.in);
         boolean continueValidate = true;
 
         while (continueValidate) {
             System.out.print("Input ip address:");
-            // create an input string
             String inputIp = input.nextLine();
-            // pass input string inside validateAddress method to validate the string
             if (validateAddress(inputIp)) {
                 String defangedAddress = defangAddress(inputIp);
                 System.out.println("Defanged address: " + defangedAddress);
@@ -54,8 +51,6 @@ public class IPAddressValidator {
      * @return boolean
      */
     public static boolean validateAddress(String checkIP) {
-        // the input string must contain 3 dots,it not return false if fails
-        // iterate through each character and find if there are three dots
         int countDot = 0;
         for (int idx = 0; idx < checkIP.length(); idx++) {
             Character digit = checkIP.charAt(idx);
@@ -67,24 +62,21 @@ public class IPAddressValidator {
             return false;
         }
 
-        // the string should have a length of at least 7 and most 15(includes 3 dots.
         if (checkIP.length() < 7 || checkIP.length() > 15) {
             return false;
 
         }
-        // a valid IP address must be in the form of A.B.C.D and they are numbers between 0-255
         String[] arrayIP = checkIP.split("\\.");
         if (arrayIP.length != 4) {
             return false;
         }
-        // check the form of A.B.C.D and they are numbers between 0-255
-        // address cannot have leading 0s, unless they are only 0
         for (int i = 0; i < arrayIP.length; i++) {
             String s = arrayIP[i];
-            if (s.length() > 1 && s.charAt(0) == '0') {
+
+            if (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 255) {
                 return false;
             }
-            if (Integer.parseInt(s) < 0 || Integer.parseInt(s) > 255) {
+            if (s.length() > 1 && s.charAt(0) == '0') {
                 return false;
             }
         }
@@ -95,18 +87,12 @@ public class IPAddressValidator {
      *
      * if validateAddress method true,reform input IP address
      *
-     * @param inputIp
+     * @param inputIp input
      * @return defanged
      *
      */
     public static String defangAddress(String inputIp) {
         String defanged = inputIp.replaceAll("\\.", "[.]");
         return defanged;
-        // replace every period "." with "[.]"
-        // retrun the defanged address back to main
     }
-
-    // if validateAddress method false
-    // display "Incorrect length and format of IP address.
-
 }
